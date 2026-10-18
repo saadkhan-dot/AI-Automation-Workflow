@@ -1,0 +1,16 @@
+const exampleWorkflow = {
+  name: 'Normalize text and check it is non-empty',
+  nodes: [
+    { id: 'input', type: 'input', config: { text: '  Hello    workflow  ' } },
+    { id: 'normalize', type: 'transform', config: { trim: true, normalizeWhitespace: true } },
+    { id: 'check', type: 'condition', config: { operator: 'nonEmpty' } },
+    { id: 'output', type: 'output', config: {} },
+  ],
+  edges: [
+    { from: 'input', to: 'normalize' },
+    { from: 'normalize', to: 'check' },
+    { from: 'check', to: 'output' },
+  ],
+};
+
+module.exports = { exampleWorkflow };

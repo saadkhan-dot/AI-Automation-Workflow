@@ -1,0 +1,22 @@
+{
+  "name": "ai-workflow-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A persistent workflow engine and visual editor",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "worker": "node src/workflows/worker.js",
+    "dev": "node --watch src/server.js",
+    "dev:client": "npm --prefix client run dev",
+    "build:client": "npm --prefix client run build",
+    "test": "node --test",
+    "test:integration": "node --test test/integration.test.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}
